@@ -6,12 +6,10 @@ export default function Nav() {
     <div>
       <ul>
         <Link to='/'><li>Home</li></Link>
-        <li>About</li>
         <li>IOU</li>
         <li>Regular Loans</li>
         <li>Customers</li>
         <li>Forms</li>
-        <li>Contact</li>
       </ul>
     </div>
   )
