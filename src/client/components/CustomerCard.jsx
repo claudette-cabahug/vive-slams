@@ -1,11 +1,17 @@
 import React from 'react'
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function CustomerCard (props) {
+
   const { customer } = props
+  
   return (
     <div>
-      <p>{customer.familyName}, {customer.givenName} {customer.middleName}</p>
+      <Link to={`/customers/${customer.id}`}>
+        <p>{customer.familyName}, {customer.givenName} {customer.middleName}</p>
+      </Link>
+      <button>Edit</button>
+      <button>Delete</button>
     </div>
   )
   
