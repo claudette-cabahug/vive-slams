@@ -8,7 +8,7 @@ export default function Nav() {
         <Link to='/'><li>Home</li></Link>
         <li>IOU</li>
         <li>Regular Loans</li>
-        <li>Customers</li>
+        <Link to='/customers'><li>Customers</li></Link>
         <li>Forms</li>
       </ul>
     </div>
