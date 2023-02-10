@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const App = () => {
   return (
     <>
-      <h1>Welcome to VIVE</h1>
-      <h2>A SLAMS</h2>
+      <h1>VIVE</h1>
+      <h3>A Simple Loan Application & Management System</h3>
     </>
   )
 }
