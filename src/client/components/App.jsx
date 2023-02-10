@@ -1,10 +1,10 @@
 import React from 'react'
+import Home from './Home'
 
 const App = () => {
   return (
     <>
-      <h1>VIVE</h1>
-      <h3>A Simple Loan Application & Management System</h3>
+      <Home />
     </>
   )
 }
