@@ -12,9 +12,23 @@ export default class Customers extends Component {
         <h1>All Customers</h1>
         <SearchBar />
         <div>
-          {customers.map(customer => {
+          {customers
+
+            .sort((a, b) => {
+              if (a.familyName < b.familyName) {
+                return -1
+              }
+              if (a.familyName > b.familyName) {
+                return 1
+              }
+              return 0
+            })
+          
+            .map(customer => {
             return <CustomerCard key={customer.id} customer={customer} />
-          })}
+            })
+            
+          }
         </div>
       </div>
     )
