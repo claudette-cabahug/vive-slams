@@ -17,16 +17,18 @@ export default function SearchBar () {
   })
 
   const handleChange = (e) => {
+
     const results = customers.filter( customer => {
       let fullName = `${customer.familyName} ${customer.givenName} ${customer.middleName}`
       if ( e.target.value === "" ) return customers
       return fullName.toLowerCase().includes(e.target.value.toLowerCase())
     })
-
+    
     setState({
-     query: e.target.value,
-     list: results
+      query: e.target.value,
+      list: results
     })
+
   }
 
   return (
@@ -41,17 +43,18 @@ export default function SearchBar () {
           value={state.query} 
           onChange={handleChange} 
         />
+        <button onClick={() => setState({query: '', list: []})}>Clear Search</button>
         <ul>
           {
             (state.query === '' ? "" : !state.list.length ? "No customer match the query" : state.list.map( customer => {
               return (
-              <>
+              <div>
                 <Link to={`/customers/${customer.id}`}>
                   <li key={customer.id}> 
                     {customer.familyName}, {customer.givenName} {customer.middleName}
                   </li>
                 </Link>
-              </>
+              </div>
               )
             }))
           }
