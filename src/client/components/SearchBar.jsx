@@ -6,7 +6,10 @@ import customers from '../../data/customers'
 
 export default function SearchBar () {
 
-  //const [query, setQuery] = useState('')
+//   const [query, setQuery] = useState('')
+//      const handleChange = (e) => {
+//        setQuery(e.target.value)
+//      }
 
   const [state, setState] = useState({
     query: '',
@@ -15,12 +18,14 @@ export default function SearchBar () {
 
   const handleChange = (e) => {
     const results = customers.filter( customer => {
+      let fullName = `${customer.familyName} ${customer.givenName} ${customer.middleName}`
       if ( e.target.value === "" ) return customers
-      return customer.familyName.toLowerCase().includes(e.target.value.toLowerCase())
+      return fullName.toLowerCase().includes(e.target.value.toLowerCase())
     })
+
     setState({
      query: e.target.value,
-     list: results 
+     list: results
     })
   }
 
@@ -42,7 +47,9 @@ export default function SearchBar () {
               return (
               <>
                 <Link to={`/customers/${customer.id}`}>
-                  <li key={customer.id}> {customer.familyName}, {customer.givenName} </li>
+                  <li key={customer.id}> 
+                    {customer.familyName}, {customer.givenName} {customer.middleName}
+                  </li>
                 </Link>
               </>
               )
@@ -54,4 +61,6 @@ export default function SearchBar () {
   )
 }
 
-// resource: https://www.makeuseof.com/react-search-bar-filters-data-create/ 
+// resources:
+// https://www.makeuseof.com/react-search-bar-filters-data-create/ 
+// https://mui.com/material-ui/react-text-field/
