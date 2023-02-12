@@ -7,18 +7,19 @@ export default function Customer () {
 
   const { id } = useParams()
   const customer = customers.find(c => String(c.id) === id)
+  const { familyName, givenName, middleName, address, mode, balance, dueDate, period, coMaker } = customer
   
   return (
     <div>
       <h2><strong>Personal Information</strong></h2>
-        <p>Account Name: {customer.familyName}, {customer.givenName} {customer.middleName}</p>
-        <p>Address: {customer.address}</p>
+        <p>Account Name: {familyName}, {givenName} {middleName}</p>
+        <p>Address: {address}</p>
       <h2><strong>Account Details</strong></h2>
-        <p>Mode: {customer.mode}</p>
-        <p>Balance: {customer.balance}</p>
-        <p>Due Date: {customer.dueDate}</p>
-        <p>Period: {customer.period}</p>
-        <p>Co-Maker: {customer.coMaker}</p>
+        <p>Mode: {mode}</p>
+        <p>Balance: {balance}</p>
+        <p>Due Date: {dueDate}</p>
+        <p>Period: {period}</p>
+        <p>Co-Maker: {coMaker}</p>
       <button>Edit</button>
       <button>Delete</button>
     </div>
