@@ -25,9 +25,9 @@ export default class Customers extends Component {
             })
           
             .map(customer => {
-            return <CustomerCard key={customer.id} customer={customer} />
+              return <CustomerCard key={customer.id} customer={customer} />
             })
-            
+
           }
         </div>
       </div>
