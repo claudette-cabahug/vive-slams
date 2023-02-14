@@ -10,10 +10,11 @@ export default class Customers extends Component {
     return (
       <div>
         <h1>All Customers</h1>
-        <SearchBar />
+        <div>
+          <SearchBar />
+        </div>
         <div>
           {customers
-
             .sort((a, b) => {
               if (a.familyName < b.familyName) {
                 return -1
@@ -27,7 +28,6 @@ export default class Customers extends Component {
             .map(customer => {
               return <CustomerCard key={customer.id} customer={customer} />
             })
-
           }
         </div>
       </div>

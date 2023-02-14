@@ -48,10 +48,11 @@ export default function SearchBar () {
           {
             (state.query === '' ? "" : !state.list.length ? "No customer match the query" : state.list.map( customer => {
               return (
-              <div>
+              <div key={customer.id}>
                 <Link to={`/customers/${customer.id}`}>
-                  <li key={customer.id}> 
-                    {customer.familyName}, {customer.givenName} {customer.middleName}
+                  <li> 
+                    {customer.familyName},
+                    {customer.givenName} {customer.middleName}
                   </li>
                 </Link>
               </div>
