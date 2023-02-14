@@ -28,7 +28,7 @@ export default function SearchBar () {
     })
   }
 
-  const handleClick = (e) => {
+  const handleClearSearch = (e) => {
     setState({
       query: '',
       list: []
@@ -47,7 +47,7 @@ export default function SearchBar () {
           value={state.query} 
           onChange={handleChange} 
         />
-        <button onClick={handleClick}>Clear Search</button>
+        <button onClick={handleClearSearch}>Clear Search</button>
         <ul>
           {
             (state.query === '' ? "" : !state.list.length ? "No customer match the query" : state.list.map( customer => {
